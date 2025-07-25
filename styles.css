@@ -1,0 +1,264 @@
+/* ✅ Archivo: styles.css */
+
+/* Fuente general y ajustes base */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a23; /* fondo oscuro */
+  color: #ffffff; /* texto claro */
+}
+
+/* Animación de fade-in para contenido principal */
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Encabezado con logo a la derecha y menú a la izquierda */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #0a0a23;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #1a1a40;
+}
+
+header img.logo {
+  height: 50px;
+  order: 2;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  order: 1;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #00ffff; /* azul cian metálico */
+}
+
+/* Selector de idioma */
+.language-switch {
+  margin-left: 15px;
+  color: #ccc;
+  font-size: 0.9em;
+}
+
+.language-switch select {
+  background-color: #1a1a40;
+  color: #00ffff;
+  border: 1px solid #333;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.language-switch select:hover {
+  border-color: #00ffff;
+}
+
+section {
+  padding: 40px 20px;
+  border-bottom: 1px solid #1a1a40;
+}
+
+/* Botón primario */
+.btn,
+form button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #0077cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover,
+form button:hover {
+  background-color: #00aaff;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background-color: #0a0a23;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  border-top: 1px solid #1a1a40;
+}
+
+/* Intro inicial con logo */
+#startup-intro {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: #0a0a23;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOut 2s ease 3s forwards;
+}
+
+#startup-intro img {
+  max-width: 150px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* Formulario */
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 4px;
+  border: none;
+  background-color: #1a1a40;
+  color: #fff;
+  font-size: 1em;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border: 1px solid #00ffff;
+  background-color: #1f1f50;
+}
+
+/* Etiquetas de formulario */
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #ccc;
+}
+
+/* Video presentación */
+.video-demo {
+  text-align: left;
+  margin-top: 30px;
+}
+
+.video-demo video {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+.video-demo h3 {
+  color: #00ffff;
+  margin-bottom: 10px;
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .language-switch {
+    margin-top: 10px;
+  }
+
+  section {
+    padding: 30px 15px;
+  }
+}
+/* Alinear correctamente checkbox + texto en línea */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.checkbox-label {
+  font-size: 0.9em;
+  color: #ccc;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.checkbox-label a {
+  color: #00ffff;
+  text-decoration: underline;
+}
+
+.checkbox-label a:hover {
+  color: #00aaff;
+}
+
+/* Justificación general de textos */
+section p,
+section li,
+section label,
+section textarea,
+section input,
+section h3,
+section h4,
+.checkbox-label {
+  text-align: justify;
+}
+
+/* Mejora visual del formulario en pantallas pequeñas */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
