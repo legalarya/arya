@@ -1,30 +1,44 @@
-/* ✅ Archivo: styles.css */
+/* ✅ Archivo: styles.css actualizado */
 
-/* Fuente general y ajustes base */
+/* Estilos base */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #0a0a23; /* fondo oscuro */
-  color: #ffffff; /* texto claro */
+  background-color: #0a0a23;
+  color: #ffffff;
 }
 
-/* Animación de fade-in para contenido principal */
-.fade-in {
-  animation: fadeIn 2s ease-in-out;
+/* Top-bar profesional */
+#top-bar {
+  background-color: #0b2545;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+#top-bar h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
-/* Encabezado con logo a la derecha y menú a la izquierda */
+#top-bar .tagline {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Encabezado con logo y menú */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 15px 20px;
   background-color: #0a0a23;
   position: sticky;
   top: 0;
@@ -34,13 +48,11 @@ header {
 
 header img.logo {
   height: 50px;
-  order: 2;
 }
 
 nav {
   display: flex;
   align-items: center;
-  order: 1;
 }
 
 nav ul {
@@ -56,41 +68,49 @@ nav ul li a {
   text-decoration: none;
   padding: 10px;
   transition: color 0.3s;
+  font-weight: 600;
 }
 
 nav ul li a:hover {
-  color: #00ffff; /* azul cian metálico */
+  color: #00ffff;
 }
 
 /* Selector de idioma */
 .language-switch {
   margin-left: 15px;
-  color: #ccc;
-  font-size: 0.9em;
-}
-
-.language-switch select {
-  background-color: #1a1a40;
   color: #00ffff;
-  border: 1px solid #333;
-  padding: 6px 10px;
-  border-radius: 4px;
-  font-size: 0.9em;
-  outline: none;
+  font-size: 1rem;
   cursor: pointer;
-  transition: border-color 0.3s;
+  font-weight: 700;
 }
 
-.language-switch select:hover {
-  border-color: #00ffff;
+/* Animaciones */
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Secciones */
 section {
   padding: 40px 20px;
   border-bottom: 1px solid #1a1a40;
 }
 
-/* Botón primario */
+section h2 {
+  color: #00ffff;
+  font-size: 1.6em;
+}
+
+section h3, section h4 {
+  color: #ffffff;
+  margin-top: 20px;
+}
+
+/* Botones */
 .btn,
 form button {
   display: inline-block;
@@ -120,7 +140,7 @@ footer {
   border-top: 1px solid #1a1a40;
 }
 
-/* Intro inicial con logo */
+/* Intro inicial con animación */
 #startup-intro {
   position: fixed;
   top: 0; left: 0;
@@ -149,6 +169,11 @@ footer {
 }
 
 /* Formulario */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 form input,
 form textarea {
   width: 100%;
@@ -168,7 +193,6 @@ form textarea:focus {
   background-color: #1f1f50;
 }
 
-/* Etiquetas de formulario */
 form label {
   display: block;
   margin-top: 15px;
@@ -176,44 +200,7 @@ form label {
   color: #ccc;
 }
 
-/* Video presentación */
-.video-demo {
-  text-align: left;
-  margin-top: 30px;
-}
-
-.video-demo video {
-  width: 100%;
-  border-radius: 10px;
-  border: 1px solid #333;
-}
-
-.video-demo h3 {
-  color: #00ffff;
-  margin-bottom: 10px;
-}
-
-/* Responsivo */
-@media screen and (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .language-switch {
-    margin-top: 10px;
-  }
-
-  section {
-    padding: 30px 15px;
-  }
-}
-/* Alinear correctamente checkbox + texto en línea */
+/* Checkbox */
 .checkbox-group {
   display: flex;
   align-items: center;
@@ -245,7 +232,24 @@ form label {
   color: #00aaff;
 }
 
-/* Justificación general de textos */
+/* Video presentación */
+.video-demo {
+  text-align: left;
+  margin-top: 30px;
+}
+
+.video-demo video {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+.video-demo h3 {
+  color: #00ffff;
+  margin-bottom: 10px;
+}
+
+/* Textos justificados */
 section p,
 section li,
 section label,
@@ -257,8 +261,24 @@ section h4,
   text-align: justify;
 }
 
-/* Mejora visual del formulario en pantallas pequeñas */
-form {
-  max-width: 600px;
-  margin: 0 auto;
+/* Responsive */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .language-switch {
+    margin-top: 10px;
+  }
+
+  section {
+    padding: 30px 15px;
+  }
 }
+
